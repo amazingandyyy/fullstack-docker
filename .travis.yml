@@ -12,10 +12,10 @@ script:
   - docker run travis/react-test:latest npm run test -- --coverage
 
 after_success:
-  - docker build -t amazingandyyy/fullstack--client ./client
-  - docker build -t amazingandyyy/fullstack--nginx ./nginx
-  - docker build -t amazingandyyy/fullstack--server ./server
-  - docker build -t amazingandyyy/fullstack--worker ./worker
+  - docker build -t amazingandyyy/fullstack-client ./client
+  - docker build -t amazingandyyy/fullstack-nginx ./nginx
+  - docker build -t amazingandyyy/fullstack-server ./server
+  - docker build -t amazingandyyy/fullstack-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push amazingandyyy/fullstack-client
   - docker push amazingandyyy/fullstack-nginx 
