@@ -4,22 +4,33 @@
   {
    "name": "client",
    "image": "amazingandyyy/fullstack-client",
-   "hostname": "client"
-  },
-  {
-   "name": "nginx",
-   "image": "amazingandyyy/fullstack-nginx",
-   "hostname": "nginx"
+   "hostname": "client",
+   "essential": false
   },
   {
    "name": "server",
    "image": "amazingandyyy/fullstack-server",
-   "hostname": "server"
+   "hostname": "api",
+   "essential": false
   },
   {
    "name": "worker",
    "image": "amazingandyyy/fullstack-worker",
-   "hostname": "worker"
+   "hostname": "worker",
+   "essential": false
+  },
+  {
+   "name": "nginx",
+   "image": "amazingandyyy/fullstack-nginx",
+   "hostname": "nginx",
+   "essential": true,
+   "portMappings": [
+    {
+     "hostPort": 80,
+     "containerPort": 80
+    }
+   ],
+   "links": ["client", "server"]
   }
  ]
 }
