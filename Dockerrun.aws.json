@@ -1,0 +1,25 @@
+{
+ "AWSEBDockerrunVersion": 2,
+ "containerDefinitions": [
+  {
+   "name": "client",
+   "image": "amazingandyyy/fullstack-client",
+   "hostname": "client"
+  },
+  {
+   "name": "nginx",
+   "image": "amazingandyyy/fullstack-nginx",
+   "hostname": "nginx"
+  },
+  {
+   "name": "server",
+   "image": "amazingandyyy/fullstack-server",
+   "hostname": "server"
+  },
+  {
+   "name": "worker",
+   "image": "amazingandyyy/fullstack-worker",
+   "hostname": "worker"
+  }
+ ]
+}

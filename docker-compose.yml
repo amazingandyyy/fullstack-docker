@@ -4,13 +4,13 @@ services:
     image: 'postgres:latest'
   redis:
     image: 'redis:latest'
-  api:
+  server:
     build:
       dockerfile: Dockerfile.dev
-      context: ./api
+      context: ./server
     volumes:
       - /app/node_modules
-      - ./api:/app
+      - ./server:/app
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
